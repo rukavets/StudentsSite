@@ -1,0 +1,67 @@
+body {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #555555;
+  padding-top: 5vh;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #363535;
+  padding-top: 10vh;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #363535;
+}
+
+/* Institutes section */
+#institutes {
+  margin-bottom: 20px;
+  padding-top: 10vh;
+}
+
+#institutes button {
+  background-color: #3a3a3a;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 15px 30px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#institutes button:hover {
+  background-color: #ce5c32;
+}
+
+/* Groups section */
+#groups {
+  /* Styles for the groups section */
+  margin-bottom: 20px;
+  padding-top: 10vh;
+}
+#groups button{
+  background-color: #dddddd;
+  color: #555555;
+  font-size: 20px;
+  padding: 15px 30px;
+  margin-right: 10px;
+  border: 2px solid #dddddd;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+#groups button:hover{
+  border-color: #ce5c32;
+}

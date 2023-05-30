@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>StudentIN</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <!-- Favicons -->
+  <link href="images/student.png" rel="icon">
+  <link href="images/student.png" rel="apple-touch-icon">
+
+  <!-- Stylesheets CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/nivo-lightbox.css">
+  <link rel="stylesheet" href="css/nivo_themes/default/default.css">
+  <link rel="stylesheet" href="css/hover-min.css">
+  <link rel="stylesheet" href="css/flexslider.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
+
+</head>
+<style>
+  .group-button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.group-button:hover {
+  background-color: #5690b7;
+}
+</style>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+  <!-- Preloader section -->
+  <div class="preloader">
+    <div class="sk-spinner sk-spinner-pulse"></div>
+  </div>
+
+    <!-- Navigation section -->
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">StudentIN</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="main.html" class="smoothScroll">Про себе</a></li>
+          <li><a href="listgroup.html" class="smoothScroll">Список групи</a></li>
+          <li><a href="timetable.html" class="smoothScroll">Розклад</a></li>
+          <li><a href="mark.html" class="smoothScroll">Оцінки</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- About section -->
+  <section id="about" class="parallax-section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
+          <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
+            <h3>Оберіть вашу групу</h3>
+            
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+        
+      <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
+        <div id="groups" class="bullet">
+          <button class="group-button" onclick="showGroup('КН-201')">КН-201</button>
+          <button class="group-button" onclick="showGroup('КН-202')">КН-202</button>
+          <button class="group-button" onclick="showGroup('КН-203')">КН-203</button>
+          <button class="group-button" onclick="showGroup('КН-204')">КН-204</button>
+          <button class="group-button" onclick="showGroup('КН-205')">КН-205</button>
+          <button class="group-button" onclick="showGroup('КН-206')">КН-206</button>
+          <button class="group-button" onclick="showGroup('КН-207')">КН-207</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script>
+function showGroup(groupName) {
+  var groupsElement = document.getElementById("groups");
+  groupsElement.innerHTML = ""; // Очищаємо вміст елементу groups
+
+  var students = getStudentsByGroup(groupName);
+  var list = document.createElement("ol"); // Використовуємо <ol> для нумерованого списку
+
+  students.forEach(function(student, index) {
+    var fullName = student.firstName + " " + student.lastName;
+    var listItem = document.createElement("li");
+    listItem.innerHTML = fullName;
+    list.appendChild(listItem);
+  });
+
+  groupsElement.appendChild(list);
+}
+
+  // Функція для отримання студентів обраної групи
+  function getStudentsByGroup(groupName) {
+    // Об'єкт зі студентами груп
+    var groups = {
+      "КН-201": [
+        { firstName: "Іван", lastName: "Іванов" },
+        { firstName: "Петро", lastName: "Петров" },
+        { firstName: "Олена", lastName: "Сидорова" },
+        { firstName: "Іван", lastName: "Петренко" },
+        { firstName: "Ірина", lastName: "Іваненко" },
+        { firstName: "Олена", lastName: "Ковальчук" },
+        { firstName: "Іван", lastName: "Шевченко" },
+        { firstName: "Тарас", lastName: "Бойко" },
+        { firstName: "Олена", lastName: "Коваль" },
+        { firstName: "Олександр", lastName: "Шевчук" },
+        { firstName: "Петро", lastName: "Мельник" },
+        { firstName: "Тетяна", lastName: "Лисенко" },
+      ],
+      "КН-202": [
+        { firstName: "Андрій", lastName: "Кузьменко" },
+        { firstName: "Марія", lastName: "Попова" },
+        { firstName: "Олександр", lastName: "Соколов" },
+        { firstName: "Олексій", lastName: "Павленко" },
+        { firstName: "Іванна", lastName: "Левченко" },
+        { firstName: "Іван", lastName: "Бондаренко" },
+        { firstName: "Христина", lastName: "Григоренко" },
+        { firstName: "Оксана", lastName: "Марченко" },
+        { firstName: "Олександр", lastName: "Жук" },
+        { firstName: "Андрій", lastName: "Гордієнко" },
+        { firstName: "Марія", lastName: "Ткаченко" },
+        { firstName: "Данило", lastName: "Соколов" },
+        // Додайте решту студентів з групи КН-202
+      ],
+      "КН-203": [
+        { firstName: "Роман", lastName: "Кузьменко" },
+        { firstName: "Марія", lastName: "Попова" },
+        { firstName: "Богдан", lastName: "Сидоренко" },
+        { firstName: "Олексій", lastName: "Павленко" },
+        { firstName: "Мирослава", lastName: "Романенко" },
+        { firstName: "Іван", lastName: "Бондаренко" },
+        { firstName: "Христина", lastName: "Василенко" },
+        { firstName: "Оксана", lastName: "Косенко" },
+        { firstName: "Ігор", lastName: "Жук" },
+        { firstName: "Андрій", lastName: "Гордієнко" },
+        { firstName: "Марія", lastName: "Федоренко" },
+        { firstName: "Дмитро", lastName: "Яременко" },
+        // Додайте решту студентів з групи КН-202
+      ],
+      "КН-204": [
+        { firstName: "Андрій", lastName: "Кузьменко" },
+        { firstName: "Марія", lastName: "Попова" },
+        { firstName: "Олександр", lastName: "Соколов" },
+        { firstName: "Олексій", lastName: "Павленко" },
+        { firstName: "Іванна", lastName: "Левченко" },
+        { firstName: "Іван", lastName: "Бондаренко" },
+        { firstName: "Христина", lastName: "Григоренко" },
+        { firstName: "Оксана", lastName: "Марченко" },
+        { firstName: "Олександр", lastName: "Жук" },
+        { firstName: "Андрій", lastName: "Гордієнко" },
+        { firstName: "Марія", lastName: "Ткаченко" },
+        { firstName: "Данило", lastName: "Соколов" },
+        // Додайте решту студентів з групи КН-202
+      ],
+      "КН-205": [
+        { firstName: "Андрій", lastName: "Кузьменко" },
+        { firstName: "Марія", lastName: "Попова" },
+        { firstName: "Олександр", lastName: "Соколов" },
+        { firstName: "Олексій", lastName: "Павленко" },
+        { firstName: "Іванна", lastName: "Левченко" },
+        { firstName: "Іван", lastName: "Бондаренко" },
+        { firstName: "Христина", lastName: "Григоренко" },
+        { firstName: "Оксана", lastName: "Марченко" },
+        { firstName: "Олександр", lastName: "Жук" },
+        { firstName: "Андрій", lastName: "Гордієнко" },
+        { firstName: "Марія", lastName: "Ткаченко" },
+        { firstName: "Данило", lastName: "Соколов" },
+        // Додайте решту студентів з групи КН-202
+      ],
+      "КН-206": [
+      { firstName: "Роман", lastName: "Кузьменко" },
+        { firstName: "Марія", lastName: "Попова" },
+        { firstName: "Богдан", lastName: "Сидоренко" },
+        { firstName: "Олексій", lastName: "Павленко" },
+        { firstName: "Мирослава", lastName: "Романенко" },
+        { firstName: "Іван", lastName: "Бондаренко" },
+        { firstName: "Христина", lastName: "Василенко" },
+        { firstName: "Оксана", lastName: "Косенко" },
+        { firstName: "Ігор", lastName: "Жук" },
+        { firstName: "Андрій", lastName: "Гордієнко" },
+        { firstName: "Марія", lastName: "Федоренко" },
+        { firstName: "Дмитро", lastName: "Яременко" },
+        // Додайте решту студентів з групи КН-202
+      ],
+      "КН-207": [
+        { firstName: "Андрій", lastName: "Кузьменко" },
+        { firstName: "Марія", lastName: "Попова" },
+        { firstName: "Олександр", lastName: "Соколов" },
+        { firstName: "Олексій", lastName: "Павленко" },
+        { firstName: "Іванна", lastName: "Левченко" },
+        { firstName: "Іван", lastName: "Бондаренко" },
+        { firstName: "Христина", lastName: "Григоренко" },
+        { firstName: "Оксана", lastName: "Марченко" },
+        { firstName: "Олександр", lastName: "Жук" },
+        { firstName: "Андрій", lastName: "Гордієнко" },
+        { firstName: "Марія", lastName: "Ткаченко" },
+        { firstName: "Данило", lastName: "Соколов" },
+        // Додайте решту студентів з групи КН-202
+      ],
+    };
+
+    // Перевіряємо, чи є обрана група в об'єкті groups
+    if (groups.hasOwnProperty(groupName)) {
+      return groups[groupName]; // Повертаємо список студентів обраної групи
+    } else {
+      return []; // Повертаємо пустий масив, якщо група не знайдена
+    }
+  }
+  </script>
+
+  <!-- Javscript JS -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/jquery.backstretch.min.js"></script>
+  <script src="js/isotope.js"></script>
+  <script src="js/imagesloaded.min.js"></script>
+  <script src="js/nivo-lightbox.min.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/jquery.parallax.js"></script>
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/custom.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>StudentIN</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <!-- Favicons -->
+  <link href="images/student.png" rel="icon">
+  <link href="images/student.png" rel="apple-touch-icon">
+
+  <!-- Stylesheets CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/nivo-lightbox.css">
+  <link rel="stylesheet" href="css/nivo_themes/default/default.css">
+  <link rel="stylesheet" href="css/hover-min.css">
+  <link rel="stylesheet" href="css/flexslider.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/log.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+    <!-- Home section -->
+  <section id="home" class="parallax-section">
+    <div class="gradient-overlay"></div>
+    <div class="container">
+      <div class="row full-height justify-content-center">
+        <div class="col-12 text-center align-self-center py-5">
+          <div class="section pb-5 pt-5 pt-sm-2 text-center">
+            <h6 class="mb-0 pb-3">
+              <span>Log In </span>
+              <span>Sign Up</span>
+            </h6>
+            <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+            <label for="reg-log"></label>
+
+            <div class="card-3d-wrap mx-auto">
+              <div class="card-3d-wrapper">
+                <div class="card-front">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-4 pb-3">Log In</h4>
+                      <div class="form-group">
+                        <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off">
+                        <i class="input-icon uil uil-at"></i>
+                      </div>  
+                      <div class="form-group mt-2">
+                        <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off">
+                        <i class="input-icon uil uil-lock-alt"></i>
+                      </div>
+                      <button  id="login_button" value="Sign Up" class="btn mt-4">submit</button>
+                        <p class="mb-0 mt-4 text-center">
+                          <a href="#0" class="link">Forgot your password?</a>
+                        </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-back">
+                  <div class="center-wrap">
+                    <div class="section text-center">
+                      <h4 class="mb-4 pb-3">Sign Up</h4>
+                      <div class="form-group">
+                        <input type="text" name="logname" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off">
+                        <i class="input-icon uil uil-user"></i>
+                      </div>  
+                      <div class="form-group mt-2">
+                        <input type="text" name="logemail" class="form-style" placeholder="Your Email" id="email_" autocomplete="off">
+                        <i class="input-icon uil uil-at"></i>
+                      </div>  
+                      <div class="form-group mt-2">
+                        <input type="text" name="logpass" class="form-style" placeholder="Your Password" id="pass_" autocomplete="off">
+                        <i class="input-icon uil uil-lock-alt"></i>
+                      </div>
+                    
+                      <button  id="signUp_button" value="Sign Up" class="btn mt-4">submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Javscript JS -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/jquery.backstretch.min.js"></script>
+  <script src="js/isotope.js"></script>
+  <script src="js/imagesloaded.min.js"></script>
+  <script src="js/nivo-lightbox.min.js"></script>
+  <script src="js/jquery.flexslider-min.js"></script>
+  <script src="js/jquery.parallax.js"></script>
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/custom.js"></script>
+
+</body>
+<script type="module">
+  
+  // ------------------------------Importing the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+  // -------------------------------- web app's Firebase configuration
+ // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCp-HuaANj3KeVEz-I4mXRtVgoyy7bHbmU",
+  authDomain: "studentssite-d0f03.firebaseapp.com",
+  databaseURL: "https://studentssite-d0f03-default-rtdb.firebaseio.com",
+  projectId: "studentssite-d0f03",
+  storageBucket: "studentssite-d0f03.appspot.com",
+  messagingSenderId: "645201257867",
+  appId: "1:645201257867:web:c3f5a93884d794089c3b8e"
+};
+  // --------------------------------------------Initializing Firebase
+  const app = initializeApp(firebaseConfig);
+  import {getDatabase, ref, get, set, child, update, remove}
+  from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"
+
+  const db = getDatabase();
+
+  const email = document.getElementById("email_");
+  const password = document.getElementById("pass_");
+  const fullName = document.getElementById("logname");
+  const group = document.getElementById("group_");
+
+  const submit = document.getElementById('signUp_button');
+  const submitLog = document.getElementById('login_button');
+  function RegisterUser(){
+    const  dbRef = ref(db);
+        get(child(dbRef, "profiles/" + fullName.value)).then((snapshot)=>{
+            if(snapshot.exists()){
+                alert("Такий користувач вже існує")
+            }
+          else{
+              set(ref(db, "profiles/" + fullName.value),
+              {
+                  Email: email.value,
+                  Password: password.value,
+                  FullName: fullName.value,
+              })
+              .then(()=>{
+                 alert("Реєстрація пройшла успішно")
+                 window.location.replace('main.html')
+              })
+              .catch((error)=>{
+                  alert("error" + error);
+              })
+          }
+      });
+  }
+  submit.addEventListener('click', RegisterUser);
+  function LoginUser(){
+    const  dbRef = ref(db);
+    get(child(dbRef, "profiles/" + fullName.value)).then((snapshot)=>{
+            if(snapshot.exists()){
+              alert("Ви увійшли в акаунт")
+                 window.location.replace('main.html')
+            }
+            else{і
+            alert("Такого користувача не знайдено")
+            }
+        });
+  }
+  submitLog.addEventListener('click', LoginUser);
+</script>
+
+</html>

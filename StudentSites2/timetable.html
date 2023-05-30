@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+        <title>StudentIN</title>
+      
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+
+        <!-- Favicons -->
+        <link href="images/student.png" rel="icon">
+        <link href="images/student.png" rel="apple-touch-icon">
+      
+        <!-- Stylesheets CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/nivo-lightbox.css">
+        <link rel="stylesheet" href="css/nivo_themes/default/default.css">
+        <link rel="stylesheet" href="css/hover-min.css">
+        <link rel="stylesheet" href="css/flexslider.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
+        <script>document.getElementsByTagName("html")[0].className += " js";</script>
+        <link rel="stylesheet" href="assets/css/style.scss">
+        <link rel="stylesheet" href="css/timetable.css">
+  <title>Розклад груп</title>
+
+</head>
+<body>
+
+    <!-- Navigation section -->
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">StudentIN</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="main.html" class="smoothScroll">Про себе</a></li>
+          <li><a href="listgroup.html" class="smoothScroll">Список групи</a></li>
+          <li><a href="timetable.html" class="smoothScroll">Розклад</a></li>
+          <li><a href="mark.html" class="smoothScroll">Оцінки</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <h1>Оберіть ваш інститут</h1>
+  <div id="institutes">
+    <button onclick="showGroups('ІКНІ')">ІКНІ</button>
+    <button onclick="showGroups('ІКТА')">ІКТА</button>
+    <button onclick="showGroups('ІМІТ')">ІМІТ</button>
+    <button onclick="showGroups('ІАРД')">ІАРД</button>
+    <button onclick="showGroups('ІЕСК')">ІЕСК</button>
+    <button onclick="showGroups('ІНЕМ')">ІНЕМ</button>
+  </div>
+
+  <h2>Список груп</h2>
+
+  <div id="groups">
+    <!-- Тут будуть відображатися групи після вибору інституту -->
+  </div>
+
+
+
+  <script src="js/timetable.js"></script>
+</body>
+</html>
